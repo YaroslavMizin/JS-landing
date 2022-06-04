@@ -1,0 +1,1008 @@
+@font-face {
+    font-family: "Nunito Sans";
+    src: url("../Fonts/NunitoSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Yeseva One";
+    src: url("../Fonts/YesevaOne-Regular.ttf");
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1438px;
+    margin: auto;
+    z-index: 1;
+}
+
+.main {
+    max-width: 1170px;
+}
+
+.text {
+    font-family: "Nunito Sans";
+    color: white;
+}
+
+.title {
+    font-family: "Yeseva One";
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.black {
+    color: #181818;
+    margin: auto;
+    text-align: center;
+}
+
+.white {
+    color: white;
+    margin: auto;
+    text-align: center;
+}
+
+.gold {
+    color: #E3B873;
+    font-size: 27px;
+    line-height: 37px;
+}
+
+.small {
+    font-size: 18px;
+    line-height: 24.95px;
+}
+
+.button {
+    background-color: #E3B873;
+    Width: 207px;
+    Height: 51px;
+    color: white;
+    border-radius: 2px;
+    outline: 0;
+    border: 0;
+    padding: 19px 42px;
+    text-transform: uppercase;
+    font-family: "Nunito Sans";
+    font-size: 11px;
+    box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.3);
+}
+
+.button:hover {
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.label {
+    position: relative;
+    display: block;
+    width: 231px;
+    font-family: "Nunito Sans";
+    font-size: 13px;
+    line-height: 22.3px;
+    color: rgba(54, 54, 54, 0.5)
+}
+
+.label::after {
+    content: 'What is your name:';
+    font-family: "Nunito Sans";
+    font-size: 14px;
+    line-height: 23px;
+    color: #363636;
+    display: block;
+}
+
+.input {
+    position: absolute;
+    font-family: "Nunito Sans";
+    font-size: 14px;
+    line-height: 23px;
+    color: #363636;
+    padding: 0px 0px 8px 127px;
+    width: 231px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: solid 1px rgba(54, 54, 54, 0.3);
+}
+
+.input-light {
+    color: white;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.15);
+}
+
+.phone-input {
+    padding-left: 132px;
+}
+
+.email-input {
+    padding-left: 74px;
+}
+
+.question-input {
+    padding-left: 102px;
+    width: 100%;
+}
+
+.phone::after {
+    content: "Your phone number:"
+}
+
+.question::after {
+    content: "I want to know:";
+}
+
+.email::after {
+    content: "Your email:";
+}
+
+.light {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.light::after {
+    color: white;
+}
+
+.logo-3 img {
+    display: block;
+    align-items: center;
+    position: relative;
+    margin: auto;
+    margin-top: 13px;
+}
+
+/* чекбокс */
+
+.custom-checkbox>input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.custom-checkbox>span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.custom-checkbox>span::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #E3B873;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.custom-checkbox>input:checked+span::before {
+    border-color: #E3B873;
+    background-color: #E3B873;
+    background-image: url("../Assets/section_3/checkbox.svg");
+}
+
+label .text {
+    font-size: 14px;
+}
+
+/* секция 1 */
+
+.first-section {
+    background-image: url("../Assets/section_1/background_1.jpg");
+    background-size: cover;
+    height: 707px;
+    margin-top: 83px;
+    padding-top: 194px;
+    position: relative;
+    z-index: 0;
+}
+
+.first-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+/* header */
+
+.header {
+    background-color: rgba(0, 0, 0, 0.93);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 83px;
+}
+
+.header-navigation {
+    list-style: none;
+    display: flex;
+}
+
+.logo {
+    color: #E3B873;
+    font-family: "Nunito Sans";
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+ nav + a:link, nav + a:visited {
+    color: white;
+    font-family: "Nunito Sans";
+    font-size: 11px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+a.number:hover {
+    color: #E3B873;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.header-content button {
+    Width: 161px;
+    Height: 37px;
+    padding: 13px 33px;
+    font-style: italic;
+}
+
+.header-navigation a:link, .header-navigation a:visited {
+    margin-right: 47px;
+    color: white;
+    text-decoration: none;
+    font-family: "Nunito Sans";
+    font-size: 11px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.header-navigation a:hover {
+    color: #E3B873;
+    text-decoration: none;
+}
+
+/* титульная страница */
+
+.first-section button {
+    z-index: 2;
+    font-style: italic;
+}
+
+.first-section button:last-child {
+    margin-left: 20px;
+    padding: 19px 23px;
+}
+
+.first-section div p:first-child {
+    font-size: 40px;
+    line-height: 53px;
+    width: 676px;
+    color: #E3B873;
+}
+
+.first-section span {
+    color: white;
+}
+
+.subtitle {
+    position: static;
+    font-size: 22px;
+    line-height: 36px;
+    width: 510px;
+}
+
+.application {
+    display: flex;
+    align-items: baseline;
+    width: 540px;
+}
+
+/* секция 2 */
+
+.second-section {
+    background-color: #131313;
+    height: 1074px;
+    padding-top: 107px;
+    padding-bottom: -300px;
+}
+
+.projects-navigation{
+    margin: 0px 0px 52px 495px;
+    display: flex;
+    gap: 50px
+}
+
+.projects-navigation button, .projects-navigation button:hover {
+    color:rgba(265, 265, 265, 0.3);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 19px;
+    font-family: "Yeseva One";
+    background: transparent;
+    border: 0;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.projects-navigation button:hover, .projects-navigation .active {
+    color:#E3B873;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
+/* левый блок */
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 482px;
+}
+
+.completed-projects {
+    width: 500px;
+    position: relative;
+    order:1;
+}
+
+.completed-projects p:first-child {
+    font-size: 27px;
+    line-height: 37px;
+    margin-top: 0px;
+}
+
+.completed-projects .text {
+    font-size: 14px;
+    line-height: 26px;
+    margin-top: 0px;
+    margin-bottom: 42px;
+}
+
+.project-data {
+    width: 500px;
+    display: flex;
+    justify-content:left;
+    flex-direction: row;
+    flex-wrap: wrap;
+    order:2;
+}
+
+div.project-data div {
+    display: block;
+    height: 110px;
+    width: 180px;
+}
+
+.project-data p:first-child {
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 9px;
+}
+
+.project-data .text {
+    margin: 0px;
+    font-size: 13px;
+}
+
+/* кнопки */
+
+.project-data-switch {
+    display: flex;
+    flex-direction: row;
+    gap: 27px;
+    align-items: center;
+    margin-top: 25px;
+    order: 3;
+}
+
+.arrow{
+    background: url("../Assets/section_2/arrow-left.svg");
+    background-size: cover;
+    border: 0;
+    width: 44px;
+    height: 16px;
+    opacity: 0.5;
+    transition: 0.5s ease;
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+.arrow:hover {
+    opacity: 1;
+}
+
+.arrow_left{
+    transform: none;
+}
+
+.dots {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    gap: 17px;
+}
+
+.rectangle {
+    background: url("../Assets/section_2/slider_button_hover.svg") no-repeat;
+    background-size: cover;
+    width: 10px;
+    height: 10px;
+    opacity: 0.4;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.rectangle:hover {
+    opacity: 1;
+}
+
+/* изображение */
+
+.project-image-slider {
+    width: 679px;
+    height: 482px;
+    position: relative;
+    order: 4;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    opacity: 0;
+    position: absolute;
+    transition: 3s ease;
+}
+
+.project-image-slider button {
+    display: none;
+}
+
+.active {
+    opacity: 1;
+    transition: 1.5s ease;
+}
+
+.third-section {
+    margin-top: -300px;
+    height: 910px;
+}
+
+/* переходный блок */
+
+.logo-2 {
+    height: 43px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.logo-2 img {
+    margin: 0px 8px 0px 8px;
+}
+
+.mask-group {
+    width: 817px;
+    height: 434px;
+    margin: 15px auto 62.5px auto;
+}
+
+/* форма для заявки */
+
+hr {
+    height: 2px;
+    width: 60px;
+    margin: auto;
+    border: 1px solid #E3B873;
+}
+
+hr + p {
+    width: 681px;
+    height: 131px;
+    margin: 35px auto 0px auto;
+    font-family: "Nunito Sans";
+    color: #363636;
+    font-size: 18px;
+    line-height: 37px;
+    text-align: center;
+}
+
+.application-form {
+    width: 800px;
+    height: 173px;
+    margin: 94px auto 94px auto;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.application-form > * {
+    margin: 0px 20px 20px 20px;
+}
+
+.application-form button:hover {
+    color: #363636;
+    border: 1px solid #363636;
+    background-color: white;
+}
+
+/* секция 4 */
+
+.fourth-section {
+    height: 1870px;
+    margin-top: 95px;
+    padding-bottom: -112.53px;
+}
+
+.fourth-section .title {
+    margin-top: 145px;
+}
+
+.fourth-section-block1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    grid-template-rows: auto;
+    margin-top: 21px;
+    grid-gap: 30px;
+}
+
+.type-of-repair {
+    height: 608px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.type-of-repair img {
+    width: 100%;
+    height: 100%;
+    object-fit: auto;
+}
+
+.type-of-repair div {
+    display: block;
+    width: 330px;
+    background-color: white;
+    margin-top: -141px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+.type-of-repair div:last-child {
+    margin: 0;
+}
+
+.type-of-repair p {
+    margin: 0;
+    color: #363636;
+    font-family: "Yeseva One";
+    font-size: 18px;
+    line-height: 25px;
+    padding: 25px 0px 0px 34px;
+}
+
+.type-of-repair ul {
+    padding: 0px 0px 23px 54px;
+    color: #959595;
+    font-family: "Nunito Sans";
+    font-size: 13px;
+    line-height: 27px;
+    margin: 0;
+}
+
+.rub-m2 {
+    display: block;
+    width: 228px;
+    height: 54px;
+    color: white;
+    background-color: #E3B873;
+    text-transform: uppercase;
+    font-family: "Yeseva One";
+    font-size: 18px;
+    line-height: 25px;
+    padding: 17px 17px;
+    border-radius: 2px;
+    align-self:baseline;
+}
+
+li span {
+    position: relative;
+    left: -5px;
+}
+
+/* второй блок */
+
+.fourth-section-background {
+    width:803px;
+    height: 598px;
+    position: absolute;
+    margin-top: -80px;
+    margin-left: -190px;
+    background-image: url("../Assets/step3/image 6.1.jpg");
+    background-size: cover;
+    z-index: -1;
+}
+
+.fourth-section-block2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 230px;
+}
+
+.left-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 500px;
+}
+
+.left-list div:not(.fourth-section-background) {
+    width: 412px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: "Nunito Sans";
+    line-height: 19px;
+    font-size: 14px;
+    color:#363636;
+    margin-left: 130px;
+}
+
+.fourth-section form {
+    position: relative;
+    width: 509px;
+    height: 506px;
+    background-color: #131313;
+    padding: 27px 49px;
+}
+
+.fourth-section form p {
+    line-height: 26px;
+    font-size: 18px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 39px;
+}
+
+.fourth-section form .label, .fourth-section form .input {
+    width: 100%;
+}
+
+.fourth-section form .label:nth-child(-n+3) {
+    margin-bottom: 48px;
+}
+
+.fourth-section form .label:nth-child(3n+1) {
+    margin-bottom: 24px;
+}
+
+.fourth-section form button {
+    width: 213px;
+    line-height: 22px;
+    padding: 18px 22px 19.5px 22px;
+    margin: 20px 49px 0px 198px;
+    bottom: 57px;
+}
+
+.fourth-section-block-down {
+    width: 509px;
+    height: 130px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    float: right;
+    font-family: "Nunito Sans";
+    font-size: 18px;
+    line-height: 26px;
+    color: #E3B873;
+}
+
+/* секция 5 */
+
+.fifth-section {
+    margin-top: -112.53px;
+    height: 864px;
+    position: relative;
+    background-image: url("../Assets/Step3/image 5.1.jpg");
+    background-size: cover;
+    z-index: 0;
+}
+
+.fifth-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: -1;
+}
+
+.fifth-section-content {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    z-index: 2;
+}
+
+.fifth-section aside {
+    width: 488px;
+    height: 100%;
+}
+
+.fifth-section aside p {
+    padding-top: 137px;
+    padding-bottom: 47px;
+    font-size: 27px;
+    line-height: 37.5px;
+}
+
+.fifth-section-navigation {
+    margin-left: -38px;
+}
+
+.fifth-section-navigation li {
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.fifth-section-navigation a:link,
+.fifth-section-navigation a:visited {
+    color: white;
+    text-decoration: none;
+    font-family: "Nunito Sans";
+    font-size: 20px;
+    line-height: 38px;
+    text-decoration: none;
+}
+
+.fifth-section-navigation a:hover {
+    color: #E3B873;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.gallery {
+    top: -41.16px;
+    position: relative;
+    height: 946.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.gallery-2 {
+    top: -112.53px;
+    height: 936.88px;
+    margin-left: 43px;
+}
+
+.fifth-section-mobile {
+    display: none;
+}
+
+/* секция 6 */
+
+.sixth-section {
+    height: 1107px;
+    position: relative;
+    background-image: url("../Assets/Step3/Group-left.jpg"), url("../Assets/Step3/Group-right.jpg");
+    background-repeat: repeat-x, repeat-x;
+    background-position: bottom left, bottom right;
+    background-size: auto, auto;
+    z-index: -1;
+}
+
+.sixth-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: -1;
+}
+
+.sixth-section span {
+    display: block;
+    width: 400px;
+    text-align: center;
+    margin: auto;
+    margin-top: 26px;
+    color: #363636;
+    font-family: "Nunito Sans";
+    font-size: 18px;
+    line-height: 29.5px;
+}
+
+.sixth-section p:first-child {
+    margin-top: 145px;
+}
+
+.clients {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.clients > div {
+    width:376px;
+    height: fit-content;
+    position: relative;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.04);
+    z-index: 2;
+}
+
+.client-card {
+    margin-bottom: 12px;
+    max-width: 324px;
+    display: inline-flex;
+}
+
+.clients > div img {
+    border-radius: 50px;
+    margin-left: 20px;
+}
+
+.clients > div p {
+    width: 220px;
+    margin-left: 20px;
+    line-height: 23px;
+    position: relative;
+    padding-left: 0px;
+}
+
+.clients article {
+    color: #959595;
+    line-height: 23.5px;
+    width: 324px;
+    margin-left: 20px;
+}
+
+.term-and-area {
+    display: block;
+    position: relative;
+    width: 294px;
+    height: 54px;
+    margin-left: -34px;
+    margin-bottom: -14px;
+}
+
+
+/* секция 7 */
+
+.seventh-section {
+    height: 953px;
+    position: relative;
+    background-image: url("../Assets/Step3/image 7.2.jpg");
+    background-size: cover;
+    z-index: 0;
+}
+
+.seventh-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: -1;
+}
+
+.seventh-section form {
+    position: absolute;
+    width: 883px;
+    height: 445.32px;
+    background-color: black;
+    margin-top: -222.66px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 34.4px 181.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.seventh-section .gold {
+    margin: 0 auto 0 auto;
+    padding-top: 274.67px; 
+    position: relative;
+    width: 579px;
+    font-size: 20px;
+    line-height: 27.72px;
+    text-align: center;
+}
+
+.questions-application-name-and-phone {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-height: 160px;
+}
+
+.seventh-section .custom-checkbox {
+    margin: auto;
+    color: white;
+}
+
+.seventh-section form button {
+    margin: 0px auto;
+}
+
+.contacts-logo {
+    margin: 26px auto 43px auto;
+    text-align: center;
+    z-index: 2;
+}
+
+form .question {
+    width: 100%;
+}
+
+form .white {
+    margin: 0px auto 45px;
+}
+
+iframe {
+    display: block;
+    width: 926px;
+    height:476px;
+    border: 0;
+}
+
+.iframe-container {
+    display: block;
+    width: 926px;
+    height:476px;
+    position: relative;
+    margin: auto;    
+}
+
+footer {
+    background-color: black;
+    height: 133px;
+    align-items: center;
+}
+
+footer .header-content {
+    height: 133px;
+}
