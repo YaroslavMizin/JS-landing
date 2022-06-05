@@ -22,8 +22,14 @@ let projects =
         repairTime: "3 months",
         cost: "Upon request",
         url: "assets/section_2_slider/3.png"
-    },
-    ];
+    }];
+
+let samples = [
+    { url: "assets/section_5_slider/1.jpg" },
+    { url: "assets/section_5_slider/2.jpg" },
+    { url: "assets/section_5_slider/3.jpg" },
+    { url: "assets/section_5_slider/4.jpg" }
+]
 
 // функция работы слайдера
 function initSlider(options) {
@@ -31,42 +37,48 @@ function initSlider(options) {
 
     // поиск DOM
     let sliderImages = document.querySelector(".project-image-slider");
+    let mobileImages = document.querySelector(".fifth-section-mobile");
     let sliderButtons = document.querySelector(".project-data-switch");
     let sliderNavigation = document.querySelector(".dots");
     let sliderTitles = document.querySelector(".projects-navigation");
-    
     let cityInfo = document.getElementById("city");
     let areaInfo = document.getElementById("area");
     let timeInfo = document.getElementById("repair_time");
     let costInfo = document.getElementById("cost");
+    let mediaQuery = window.matchMedia("screen and (max-width: 1199px)");
 
     // запуск функций
     initTitles();
-    initImages();
-    initButtons();
+    initImages(projects, sliderImages);
+    initButtons(sliderButtons);
+    if(mediaQuery.matches) {
+        initImages(samples, mobileImages);
+        initButtons(sliderImages);
+        initButtons(mobileImages);
+    }
     initNavigation();
     initInfo();
     if (options.autoplay) {
         initAutoplay();
     }
-    
-    // добавление массива изображений
-    function initImages() {
-        projects.forEach((project, index) => {
+
+    // добавление массивов изображений
+    function initImages(gallery, element) {
+       gallery.forEach((project, index) => {
             let imageDiv = `<div class="project-image n${index} ${index === 0 ? "active" : ""}
-            "style="background-image:url(${projects[index].url});" data-index="${index}"></div>`;
-            sliderImages.innerHTML += imageDiv;
+            "style="background-image:url(${gallery[index].url});" data-index="${index}"></div>`;
+            element.innerHTML += imageDiv;
         });
     }
-    
+
     // функция автоматического переключения
     function initAutoplay() {
         return setInterval(() => {
-             activeSlide = +sliderImages.querySelector(".active").dataset.index;
-             nextSlide = activeSlide === projects.length - 1 ? 0 : activeSlide + 1;
-             moveSlide(nextSlide);
-         }, options.autoplayInterval);
-     }
+            activeSlide = +sliderImages.querySelector(".active").dataset.index;
+            nextSlide = activeSlide === projects.length - 1 ? 0 : activeSlide + 1;
+            moveSlide(nextSlide);
+        }, options.autoplayInterval);
+    }
 
     // функция для навигации над изображением
     function initTitles() {
@@ -84,10 +96,10 @@ function initSlider(options) {
     // функция смены информации о слайде
     function initInfo() {
         let activeSlide = +sliderImages.querySelector(".active").dataset.index;
-            cityInfo.innerHTML = projects[activeSlide].city;
-            timeInfo.innerHTML = projects[activeSlide].repairTime;
-            areaInfo.innerHTML = projects[activeSlide].area;
-            costInfo.innerHTML = projects[activeSlide].cost;
+        cityInfo.innerHTML = projects[activeSlide].city;
+        timeInfo.innerHTML = projects[activeSlide].repairTime;
+        areaInfo.innerHTML = projects[activeSlide].area;
+        costInfo.innerHTML = projects[activeSlide].cost;
     }
 
     // функция точек внизу слайдера
@@ -112,11 +124,15 @@ function initSlider(options) {
         sliderTitles.querySelector(".active").classList.remove("active");
         sliderTitles.querySelector(".n" + numb).classList.add("active");
         initInfo();
+        if(mediaQuery.matches) {
+            mobileImages.querySelector(".active").classList.remove("active");
+            mobileImages.querySelector(".n" + numb).classList.add("active");
+        }
     }
-    
-    // функция работы кнопок
-    function initButtons() {
-        sliderButtons.querySelectorAll(".arrow").forEach(button => {
+
+    // функция кнопок
+    function initButtons(buttons) {
+        buttons.querySelectorAll(".arrow").forEach(button => {
             button.addEventListener("click", function () {
                 let activeSlide = +sliderImages.querySelector(".active").dataset.index;
                 let nextSlide;
@@ -137,5 +153,7 @@ let slideOptions = {
     autoplayInterval: 5000
 }
 
-// запуск функции
-initSlider(slideOptions);
+// запуск слайдеров
+document.addEventListener("DOMContentLoaded", () => {
+    initSlider(slideOptions);
+})

@@ -602,7 +602,7 @@ hr + p {
     margin: 0;
 }
 
-.type-of-repair p {
+.type-of-repair p, .client-card p {
     margin: 0;
     color: #363636;
     font-family: "Yeseva One";
@@ -648,7 +648,7 @@ li span {
     position: absolute;
     margin-top: -80px;
     margin-left: -190px;
-    background-image: url("../Assets/step3/image 6.1.jpg");
+    background-image: url("../Assets/section_4/background_4.jpg");
     background-size: cover;
     z-index: -1;
 }
@@ -735,7 +735,7 @@ li span {
     margin-top: -112.53px;
     height: 864px;
     position: relative;
-    background-image: url("../Assets/Step3/image 5.1.jpg");
+    background-image: url("../Assets/section_5/background_5.jpg");
     background-size: cover;
     z-index: 0;
 }
@@ -820,7 +820,7 @@ li span {
 .sixth-section {
     height: 1107px;
     position: relative;
-    background-image: url("../Assets/Step3/Group-left.jpg"), url("../Assets/Step3/Group-right.jpg");
+    background-image: url("../Assets/section_6/Group-left.jpg"), url("../Assets/section_6/Group-right.jpg");
     background-repeat: repeat-x, repeat-x;
     background-position: bottom left, bottom right;
     background-size: auto, auto;
@@ -910,7 +910,7 @@ li span {
 .seventh-section {
     height: 953px;
     position: relative;
-    background-image: url("../Assets/Step3/image 7.2.jpg");
+    background-image: url("../Assets/section_7/background_7.jpg");
     background-size: cover;
     z-index: 0;
 }
