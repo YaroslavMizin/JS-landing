@@ -34,6 +34,7 @@ let samples = [
 // функция работы слайдера
 function initSlider(options) {
     if (!projects || !projects.length) return;
+    let mediaQuery = window.matchMedia("screen and (max-width: 1199px)");
 
     // поиск DOM
     let sliderImages = document.querySelector(".project-image-slider");
@@ -45,29 +46,30 @@ function initSlider(options) {
     let areaInfo = document.getElementById("area");
     let timeInfo = document.getElementById("repair_time");
     let costInfo = document.getElementById("cost");
-    let mediaQuery = window.matchMedia("screen and (max-width: 1199px)");
 
     // запуск функций
-    initTitles();
     initImages(projects, sliderImages);
-    initButtons(sliderButtons);
+    initInfo();
     if(mediaQuery.matches) {
         initImages(samples, mobileImages);
         initButtons(sliderImages);
         initButtons(mobileImages);
+    } else {
+        initNavigation();
+        initTitles();
+        initButtons(sliderButtons);
     }
-    initNavigation();
-    initInfo();
+
     if (options.autoplay) {
         initAutoplay();
     }
 
     // добавление массивов изображений
-    function initImages(gallery, element) {
+    function initImages(gallery, container) {
        gallery.forEach((project, index) => {
             let imageDiv = `<div class="project-image n${index} ${index === 0 ? "active" : ""}
             "style="background-image:url(${gallery[index].url});" data-index="${index}"></div>`;
-            element.innerHTML += imageDiv;
+            container.innerHTML += imageDiv;
         });
     }
 
@@ -119,14 +121,15 @@ function initSlider(options) {
     function moveSlide(numb) {
         sliderImages.querySelector(".active").classList.remove("active");
         sliderImages.querySelector(".n" + numb).classList.add("active");
-        sliderNavigation.querySelector(".active").classList.remove("active");
-        sliderNavigation.querySelector(".n" + numb).classList.add("active");
-        sliderTitles.querySelector(".active").classList.remove("active");
-        sliderTitles.querySelector(".n" + numb).classList.add("active");
         initInfo();
         if(mediaQuery.matches) {
             mobileImages.querySelector(".active").classList.remove("active");
             mobileImages.querySelector(".n" + numb).classList.add("active");
+        } else {
+            sliderNavigation.querySelector(".active").classList.remove("active");
+            sliderNavigation.querySelector(".n" + numb).classList.add("active");
+            sliderTitles.querySelector(".active").classList.remove("active");
+            sliderTitles.querySelector(".n" + numb).classList.add("active");
         }
     }
 

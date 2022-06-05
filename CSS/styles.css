@@ -76,6 +76,7 @@ body * {
     font-family: "Nunito Sans";
     font-size: 11px;
     box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.3);
+    cursor: pointer;
 }
 
 .button:hover {
@@ -154,15 +155,17 @@ body * {
     color: white;
 }
 
-.logo-3 img {
+.logo_4 {
     display: block;
-    align-items: center;
-    position: relative;
     margin: auto;
     margin-top: 13px;
 }
 
 /* чекбокс */
+
+.custom-checkbox {
+    cursor: pointer;
+}
 
 .custom-checkbox>input {
     position: absolute;
@@ -247,6 +250,8 @@ label .text {
     font-family: "Nunito Sans";
     font-size: 11px;
     text-transform: uppercase;
+    caret-color: transparent;
+    cursor:context-menu;
 }
 
  nav + a:link, nav + a:visited {
@@ -496,18 +501,9 @@ div.project-data div {
 
 /* переходный блок */
 
-.logo-2 {
-    height: 43px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    margin-bottom: 15px;
-}
-
-.logo-2 img {
-    margin: 0px 8px 0px 8px;
+.logo_3 {
+    display: block;
+    margin: 15px auto;
 }
 
 .mask-group {
