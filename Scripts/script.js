@@ -5,7 +5,7 @@ let projects =
         area: "81m 2",
         repairTime: "3.5 months",
         cost: "Upon request",
-        url: "assets/section_2_slider/1.png"
+        url: "Assets/section_2_slider/1.png"
     },
     {
         title: "sochi thieves",
@@ -13,7 +13,7 @@ let projects =
         area: "105m 2",
         repairTime: "4 months",
         cost: "Upon request",
-        url: "assets/section_2_slider/2.png"
+        url: "Assets/section_2_slider/2.png"
     },
     {
         title: "rostov-on-don patriotic",
@@ -21,14 +21,14 @@ let projects =
         area: "93m 2",
         repairTime: "3 months",
         cost: "Upon request",
-        url: "assets/section_2_slider/3.png"
+        url: "Assets/section_2_slider/3.png"
     }];
 
 let samples = [
-    { url: "assets/section_5_slider/1.jpg" },
-    { url: "assets/section_5_slider/2.jpg" },
-    { url: "assets/section_5_slider/3.jpg" },
-    { url: "assets/section_5_slider/4.jpg" }
+    { url: "Assets/section_5_slider/1.jpg" },
+    { url: "Assets/section_5_slider/2.jpg" },
+    { url: "Assets/section_5_slider/3.jpg" },
+    { url: "Assets/section_5_slider/4.jpg" }
 ];
 
 // функция работы слайдера
