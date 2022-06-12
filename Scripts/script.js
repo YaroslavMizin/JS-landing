@@ -29,7 +29,7 @@ let samples = [
     { url: "assets/section_5_slider/2.jpg" },
     { url: "assets/section_5_slider/3.jpg" },
     { url: "assets/section_5_slider/4.jpg" }
-]
+];
 
 // функция работы слайдера
 function initSlider(options) {
@@ -71,7 +71,7 @@ function initSlider(options) {
             "style="background-image:url(${gallery[index].url});" data-index="${index}"></div>`;
             container.innerHTML += imageDiv;
         });
-    }
+    };
 
     // функция автоматического переключения
     function initAutoplay() {
@@ -80,7 +80,7 @@ function initSlider(options) {
             nextSlide = activeSlide === projects.length - 1 ? 0 : activeSlide + 1;
             moveSlide(nextSlide);
         }, options.autoplayInterval);
-    }
+    };
 
     // функция для навигации над изображением
     function initTitles() {
@@ -93,7 +93,7 @@ function initSlider(options) {
                 moveSlide(this.dataset.index);
             })
         })
-    }
+    };
 
     // функция смены информации о слайде
     function initInfo() {
@@ -102,7 +102,7 @@ function initSlider(options) {
         timeInfo.innerHTML = projects[activeSlide].repairTime;
         areaInfo.innerHTML = projects[activeSlide].area;
         costInfo.innerHTML = projects[activeSlide].cost;
-    }
+    };
 
     // функция точек внизу слайдера
     function initNavigation() {
@@ -115,7 +115,7 @@ function initSlider(options) {
                 moveSlide(this.dataset.index);
             })
         })
-    }
+    };
 
     // функция переключения слайдера
     function moveSlide(numb) {
@@ -131,7 +131,7 @@ function initSlider(options) {
             sliderTitles.querySelector(".active").classList.remove("active");
             sliderTitles.querySelector(".n" + numb).classList.add("active");
         }
-    }
+    };
 
     // функция кнопок
     function initButtons(buttons) {
@@ -147,16 +147,16 @@ function initSlider(options) {
                 moveSlide(nextSlide);
             });
         });
-    }
-}
+    };
+};
 
 let slideOptions = {
     dot: true,
     autoplay: true,
     autoplayInterval: 5000
-}
+};
 
 // запуск слайдеров
 document.addEventListener("DOMContentLoaded", () => {
     initSlider(slideOptions);
-})
+});
